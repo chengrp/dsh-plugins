@@ -1,0 +1,41 @@
+{
+  "name": "@chengrp/<name>",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "TODO: one-line description of <name>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengrp/dsh-plugins.git",
+    "directory": "packages/<name>"
+  },
+  "homepage": "https://github.com/chengrp/dsh-plugins/tree/main/packages/<name>",
+  "keywords": ["dsh", "dsh-plugin"],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  }
+}
