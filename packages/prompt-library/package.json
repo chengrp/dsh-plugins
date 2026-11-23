@@ -1,0 +1,42 @@
+{
+  "name": "@chengrp/prompt-library",
+  "version": "0.3.1",
+  "type": "module",
+  "description": "Local prompt library: collect, tag, search and reuse prompts from the DSH sidebar. Data stays on this machine.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengrp/dsh-plugins.git",
+    "directory": "packages/prompt-library"
+  },
+  "homepage": "https://github.com/chengrp/dsh-plugins/tree/main/packages/prompt-library",
+  "keywords": ["dsh", "dsh-plugin", "prompt", "sidebar"],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

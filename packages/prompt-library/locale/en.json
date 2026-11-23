@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Prompt Library",
+    "description": "A local prompt library: create, edit and delete prompts from the sidebar, filter by tags, search, track usage frequency, and fill the current session composer with one click. Data stays on this machine.",
+    "detail": "docs/DETAIL.md"
+  }
+}
